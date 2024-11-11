@@ -3,19 +3,15 @@ Design and query a database for "ABC" a mid-sized company aiming to manage emplo
 
 **General Instructions :**
 1.Referential Integrity: Ensure that all foreign key relationships are defined correctly between the tables.
-2.Normalization: Ensure that the tables are normalized (at least 3NF), i.e., no repeating groups, no partial
-dependencies, and no transitive dependencies.
-3.Constraints: Apply necessary constraints like NOT NULL, UNIQUE, CHECK, and DEFAULT values as
-specified.
-4.Data Integrity: Handle scenarios like managing employees without a manager (nullable ManagerID),
-and ensure attendance status has valid options ('Present', 'Absent', 'Leave').
+2.Normalization: Ensure that the tables are normalized (at least 3NF), i.e., no repeating groups, no partial dependencies, and no transitive dependencies.
+3.Constraints: Apply necessary constraints like NOT NULL, UNIQUE, CHECK, and DEFAULT values as specified.
+4.Data Integrity: Handle scenarios like managing employees without a manager (nullable ManagerID), and ensure attendance status has valid options ('Present', 'Absent', 'Leave').
 
 **Table/Schema Structure:**
 ![image](https://github.com/user-attachments/assets/7bb13b18-6f15-4d70-bf69-09aee710b24b)
 
 **Table1. Department Table**
-Question: Create a table named Department to store department information. The table should have the
-following columns:
+Question: Create a table named Department to store department information. The table should have the following columns:
 •DepartmentID (Primary Key)
 •DepartmentName (Name of the department, not null)
 _Note: Ensure that DepartmentID is set as the primary key and DepartmentName is not allowed to be NULL._
@@ -52,22 +48,19 @@ _Note: The ManagerID column should be nullable, allowing employees to have no ma
 **Answer:** Created Table and Inserted desired values into this Employee Table (Ataching herewith the Screenshot)
 ![image](https://github.com/user-attachments/assets/b68a9933-b00f-4589-a62b-ab396f2822e7)
 
-**Table4. Attendance Table**
-Question: Create a table named Attendance to track employee attendance. The table should include the
-following columns:
+****Table4. Attendance Table**
+**Question: Create a table named Attendance to track employee attendance. The table should include the following columns:
 •AttendanceID (Primary Key)
 •EmployeeID (ID of the employee, foreign key referencing Employee)
 •Date (Date of attendance)
 •Status (Attendance status: 'Present', 'Absent', or 'Leave’)
-_Note: Ensure that a foreign key constraint is placed on EmployeeID to reference the Employee table, and enforce that
-Status can only contain the values 'Present', 'Absent', or 'Leave'._
+_Note: Ensure that a foreign key constraint is placed on EmployeeID to reference the Employee table, and enforce that Status can only contain the values 'Present', 'Absent', or 'Leave'._
 
 **Answer:** Created Table and Inserted desired values into this Attendance Table (Ataching herewith the Screenshot)
 ![image](https://github.com/user-attachments/assets/20d18df1-8284-440a-81eb-05706582d405)
 
 **Table5: Salary Table**
-Question: Create a table named Salary to store salary details of employees. The table should include the
-following columns:
+Question: Create a table named Salary to store salary details of employees. The table should include the following columns:
 
 •SalaryID (Primary Key)
 •EmployeeID (ID of the employee, foreign key referencing Employee)
@@ -81,8 +74,7 @@ _Note: Ensure that a foreign key constraint is placed on EmployeeID to reference
 ![image](https://github.com/user-attachments/assets/0263390c-37e6-4bfa-af4f-abf70e961c3c)
 
 **Table6. Project Table**
-Question: Create a table named Project to store information about projects. The table should include the
-following columns:
+Question: Create a table named Project to store information about projects. The table should include the following columns:
 
 •ProjectID (Primary Key)
 •ProjectName (Name of the project, not null)
@@ -90,28 +82,25 @@ following columns:
 •EndDate (End date of the project)
 •ProjectManagerID (ID of the manager responsible for the project, foreign key referencing Employee)
 
-_Make sure to enforce that ProjectManagerID references the Employee table and indicates who is the manager
-of the project._
+_Make sure to enforce that ProjectManagerID references the Employee table and indicates who is the manager of the project._
 
 **Answer:** Created Table and Inserted desired values into this Project Table (Ataching herewith the Screenshot)
 ![image](https://github.com/user-attachments/assets/a3eef37b-6a21-4bfe-8f82-5aaab3818f39)
 
 **Table7: Project Allocation Table**
-Question: Create a table named ProjectAllocation to manage the many-to-many relationship between employees
-and projects. The table should include the following columns:
+Question: Create a table named ProjectAllocation to manage the many-to-many relationship between employees and projects. The table should include the following columns:
 •AllocationID (Primary Key)
 •EmployeeID (ID of the employee, foreign key referencing Employee)
 •ProjectID (ID of the project, foreign key referencing Project)
 •AllocationDate (Date when the employee is allocated to the project)
 _Ensure that:
 •Foreign key constraints are placed on EmployeeID (referencing Employee) and ProjectID (referencing Project).
-•The combination of EmployeeID and ProjectID should be unique to prevent an employee from being allocated
-to the same project more than once._
+•The combination of EmployeeID and ProjectID should be unique to prevent an employee from being allocated to the same project more than once._
 **Answers:** Created Table and Inserted desired values into this ProjectAllocation Table (Ataching herewith the Screenshot)
 ![image](https://github.com/user-attachments/assets/ae88d6f6-23f5-4c21-916b-cc918e334c84)
 
-**************************************************************SOME ASSIGNMENT QUESTIONS ON DATA RETRIEVAL FROM THESE TABLES:*****************************************************************
 
+**************************************************************SOME ASSIGNMENT QUESTIONS ON DATA RETRIEVAL FROM THESE TABLES:*****************************************************************
 **Question1: Retrieve the first and last names of all employees.**
 
 **Solution:**
@@ -191,19 +180,3 @@ to the same project more than once._
 
 **Solution:**
 ![image](https://github.com/user-attachments/assets/2c3cb22e-e962-4c18-b574-d92cf45c2574)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
